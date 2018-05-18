@@ -4,7 +4,7 @@
       <view>input:</view>
       <input name="input" placeholder="please input here" focus="true"/>
     </view>
-      <button form-type="submit">Submit</button>
+      <button form-type="submit">Submit me</button>
   </form>
 </template>
 
