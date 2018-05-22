@@ -11,8 +11,8 @@
   </div>
   <div class="cards">
     <card :text="test" :imageUrl="imageUri"/>
-    <card :text="test"/>
-    <card :text="test"/>
+    <card :text="test" :imageUrl="imageUri"/>
+    <card :text="test" :imageUrl="imageUri"/>
   </div>
  </div>
 </template>
@@ -55,6 +55,7 @@ export default {
 .cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 </style>

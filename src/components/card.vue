@@ -1,12 +1,10 @@
 <template>
-  <div class="cards">
-    <div class="card-media">
-      <image :src="imageUrl"/>
+    <div class="card">
+      <image :src="imageUrl" class="card-media"/>
+      <div class="card-content">
+        <p>{{text}}</p>
+      </div>
     </div>
-    <div class="card-content">
-      <p>{{text}}</p>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -15,12 +13,16 @@ export default {
 }
 </script>
 <style>
-  .cards {
-    width: 300px;
-    height: 300px;
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1rpx solid gray;
+    box-shadow: 20rpx 10rpx 10rpx #A0A0A0;
+    width: 350rpx;
+    height: 350rpx;
   }
   .card-media {
-    width: 50px;
-    height: 60px;
+    width: 350rpx;
+    height: 350rpx;
   }
 </style>
