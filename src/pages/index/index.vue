@@ -9,10 +9,15 @@
       </block>
     </swiper>
   </div>
-  <div class="cards">
-    <card :text="test" :imageUrl="imageUri"/>
-    <card :text="test" :imageUrl="imageUri"/>
-    <card :text="test" :imageUrl="imageUri"/>
+  <div>
+    <scroll-view scroll-x style="width: 100%">
+      <div class="cards">
+        <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl1"/>
+        <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl2"/>
+        <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl3"/>
+        <card :text="text" :imageUrl="imageUri"/>
+      </div>
+    </scroll-view>
   </div>
  </div>
 </template>
@@ -24,13 +29,16 @@ export default {
   data () {
     return {
       imgUrls: [
-      '../../../static/images/swiper/1.jpg',
-      '../../../static/images/swiper/2.jpg',
-      '../../../static/images/swiper/3.jpg',
-      'http://img2.imgtn.bdimg.com/it/u=4000104790,3741910670&fm=27&gp=0.jpg'
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527093817815&di=e072692acb088b0fd5f909bee1049ea1&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170622%2F7be767f5d0704db0bfef500f5e14188a_th.png',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688561&di=b90b2acd20ba442ce131893ebf66862c&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1409%2F29%2Fc0%2F39107107_1411954214699_mthumb.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527093872525&di=67f47d5fc9dd3c3ce7fafb2ac7bb166d&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F12%2F39%2F15%2F10958PICYjb.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688604&di=0cc0b74a3790bd45ff42e972c268f668&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F5440b3b2ef0f5.jpg'
       ],
-      test: 'im a card component',
-      imageUri: 'http://img2.imgtn.bdimg.com/it/u=4000104790,3741910670&fm=27&gp=0.jpg',
+      text: 'im a card component',
+      imageUrl1: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688604&di=0cc0b74a3790bd45ff42e972c268f668&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F5440b3b2ef0f5.jpg',
+      imageUrl2: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688561&di=b90b2acd20ba442ce131893ebf66862c&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1409%2F29%2Fc0%2F39107107_1411954214699_mthumb.jpg',
+      imageUrl3: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527093817815&di=e072692acb088b0fd5f909bee1049ea1&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170622%2F7be767f5d0704db0bfef500f5e14188a_th.png',
+      cardTitle: 'Title',
       indicatorDots: true,
       autoplay: true,
       interval: 5000,
@@ -54,8 +62,5 @@ export default {
 }
 .cards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 </style>
