@@ -19,7 +19,7 @@ export default {
     flex-direction: column;
     border: 1rpx solid gray;
     border-radius: 0 0 4% 4%;
-    box-shadow: 20rpx 10rpx 10rpx #A0A0A0;
+    /* box-shadow: 20rpx 10rpx 10rpx #A0A0A0; */
     margin: 10rpx;
     width: 300rpx;
     height: 350rpx;

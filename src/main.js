@@ -14,24 +14,25 @@ export default {
     pages: ['^pages/index/main', 'pages/form/main'],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarBackgroundColor: '#009688',
+      navigationBarTitleText: '装潢小屋',
+      navigationBarTextStyle: 'white'
     },
     tabBar: {
-      color: '#AEADAD',
-      selectedColor: '#049BFF',
+      backgroundColor: '#009688',
+      color: '#cdcdcd',
+      selectedColor: '#ffffff',
       list: [{
         pagePath: 'pages/index/main',
-        iconPath: '/static/images/tabBars/decoration.png',
-        selectedIconPath: '/static/images/tabBars/selectDecoration.png',
+        iconPath: '/static/images/tabBars/home.png',
+        selectedIconPath: '/static/images/tabBars/selectHome.png',
         text: '首页'
       },
       {
         pagePath: 'pages/form/main',
-        iconPath: '/static/images/tabBars/form.png',
-        selectedIconPath: '/static/images/tabBars/selectForm.png',
-        text: '表单'
+        iconPath: '/static/images/tabBars/hammer_nail.png',
+        selectedIconPath: '/static/images/tabBars/selectHammer_nail.png',
+        text: '预约'
       }]
     }
   }
