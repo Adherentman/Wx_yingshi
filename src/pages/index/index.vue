@@ -12,7 +12,7 @@
   <div>
     <div class="card-header">
     <div class="card-header-line-left">——————</div>
-    <h1 class="card-header-h1">  风 格 展 示  </h1>
+    <h1 class="card-header-h1">风 格 展 示</h1>
     <div class="card-header-line-right">——————</div>
     </div>
     <scroll-view scroll-x class="card-paper">
@@ -49,6 +49,19 @@ export default {
       interval: 5000,
       duration: 500
     }
+  },
+  created: function(){
+    // wx.request({
+    //   url: 'http://web.juhe.cn:8080/constellation/getAll',
+    //   data: {
+    //     consName: '摩羯座',
+    //     type: 'today',
+    //     key: '3a5ff573b32b8e645e5692181f06313f'
+    //   },
+    //   success: function(res){
+    //     console.log(res.data)
+    //   }
+    // })
   },
   methods: {
   },
