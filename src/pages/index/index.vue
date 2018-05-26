@@ -20,7 +20,7 @@
         <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl1"/>
         <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl2"/>
         <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUrl3"/>
-        <card :text="text" :imageUrl="imageUri"/>
+        <card :text="text" :cardTitle="cardTitle" :imageUrl="imageUri"/>
       </div>
     </scroll-view>
   </div>

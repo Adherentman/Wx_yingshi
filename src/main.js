@@ -15,7 +15,7 @@ export default {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#009688',
-      navigationBarTitleText: '装潢小屋',
+      navigationBarTitleText: '映拾',
       navigationBarTextStyle: 'white'
     },
     tabBar: {
