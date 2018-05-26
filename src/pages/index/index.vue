@@ -29,8 +29,12 @@
 
 <script>
 import card from '@/components/card';
+import { MaoYanRequest } from '../../utils/request.js';
 
 export default {
+  async onLoad(){
+    this.getMovieList();
+  },
   data () {
     return {
       imgUrls: [
@@ -43,27 +47,20 @@ export default {
       imageUrl1: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688604&di=0cc0b74a3790bd45ff42e972c268f668&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F5440b3b2ef0f5.jpg',
       imageUrl2: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527688561&di=b90b2acd20ba442ce131893ebf66862c&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1409%2F29%2Fc0%2F39107107_1411954214699_mthumb.jpg',
       imageUrl3: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527093817815&di=e072692acb088b0fd5f909bee1049ea1&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170622%2F7be767f5d0704db0bfef500f5e14188a_th.png',
-      cardTitle: 'Title',
+      cardTitle: '',
       indicatorDots: true,
       autoplay: true,
       interval: 5000,
       duration: 500
     }
   },
-  created: function(){
-    // wx.request({
-    //   url: 'http://web.juhe.cn:8080/constellation/getAll',
-    //   data: {
-    //     consName: '摩羯座',
-    //     type: 'today',
-    //     key: '3a5ff573b32b8e645e5692181f06313f'
-    //   },
-    //   success: function(res){
-    //     console.log(res.data)
-    //   }
-    // })
-  },
   methods: {
+    getMovieList(){
+      MaoYanRequest('movie/list.json', {type: 'hot', offset: '0', limit: '1000'}).then((data) => {
+        console.log(data.data.movies[0].nm)
+        this.imageUrl3 = data.data.movies[0].img
+      })
+    },
   },
   components:{
     card

@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <image :src="imageUrl" class="card-media" :mode="widthFix"/>
+      <image :src="imageUrl" class="card-media" :mode="aspectFit"/>
       <div class="card-content">
         <h1 class="card-title">{{cardTitle}}</h1>
         <p class="card-p">{{text}}</p>
@@ -17,21 +17,19 @@ export default {
   .card {
     display: flex;
     flex-direction: column;
-    border: 1rpx solid gray;
     border-radius: 0 0 4% 4%;
     /* box-shadow: 20rpx 10rpx 10rpx #A0A0A0; */
     margin: 10rpx;
-    width: 300rpx;
-    height: 250rpx;
+    width: 350rpx;
+    height: 310rpx;
   }
   .card-media {
-    width: 300rpx;
-    height: 250rpx;
+    width: 350rpx;
   }
   .card-content {
     position: absolute;
-    top: 160rpx;
-    width: 300rpx;
+    top: 230rpx;
+    width: 350rpx;
     height: 90rpx;
     background-color: rgba(238, 238, 238, 0.3);
   }
