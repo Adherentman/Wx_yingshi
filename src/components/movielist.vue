@@ -69,7 +69,7 @@ export default {
   color: #757575;
 }
 .plotPanels {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 20rpx;
   background-color: #EEEEEE;
   color: #4d4d4d;
