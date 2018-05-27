@@ -63,8 +63,8 @@ export default {
       })
     }
   },
-  components:{
-    card
+  components: {
+    card,
   }
 }
 </script>

@@ -13,6 +13,7 @@ export default {
   props: ['score', 'cardTitle', 'imageUrl']
 }
 </script>
+
 <style>
   .card {
     display: flex;
@@ -32,7 +33,7 @@ export default {
     top: 260rpx;
     width: 300rpx;
     height: 140rpx;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #F5F5F5;
     background-color: rgba(0, 0, 0, 0.3);
   }
