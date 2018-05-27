@@ -17,9 +17,11 @@
     </div>
     <scroll-view scroll-x class="card-paper">
       <div class="cards">
-      <div v-for="(item, index) in movieInfo" :key="index">
-        <card :score="item.sc" :cardTitle="item.nm" :imageUrl="item.img"/>
-      </div>
+        <div v-for="(item, index) in movieInfo" :key="index">
+          <div @click="getMoiveDetails(item.id)">
+            <card :score="item.sc" :cardTitle="item.nm" :imageUrl="item.img"/>
+          </div>
+        </div>
       </div>
     </scroll-view>
   </div>
@@ -52,10 +54,14 @@ export default {
   methods: {
     getMovieList(){
       MaoYanRequest('movie/list.json', {type: 'hot', offset: '0', limit: '1000'}).then((data) => {
-        this.movieInfo = data.data.movies
-        console.log(this.movieInfo)
+        this.movieInfo = data.data.movies;
       })
     },
+    getMoiveDetails(id){
+      wx.navigateTo({
+        url: `../movieDetail/main?id=${id}`,
+      })
+    }
   },
   components:{
     card

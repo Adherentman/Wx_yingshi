@@ -32,7 +32,7 @@ export default {
     top: 260rpx;
     width: 300rpx;
     height: 140rpx;
-    font-family: cursive;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #F5F5F5;
     background-color: rgba(0, 0, 0, 0.3);
   }
