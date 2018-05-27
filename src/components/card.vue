@@ -2,42 +2,45 @@
     <div class="card">
       <image :src="imageUrl" class="card-media" :mode="aspectFit"/>
       <div class="card-content">
-        <h1 class="card-title">{{cardTitle}}</h1>
-        <p class="card-p">{{text}}</p>
+        <p class="card-title">{{cardTitle}}</p>
+        <p class="movie-score">评分: {{score}}</p>
       </div>
     </div>
 </template>
 
 <script>
 export default {
-  props: ['text', 'cardTitle', 'imageUrl']
+  props: ['score', 'cardTitle', 'imageUrl']
 }
 </script>
 <style>
   .card {
     display: flex;
     flex-direction: column;
-    border-radius: 0 0 4% 4%;
+    /* border-radius: 0 0 4% 4%; */
     /* box-shadow: 20rpx 10rpx 10rpx #A0A0A0; */
     margin: 10rpx;
-    width: 350rpx;
-    height: 310rpx;
+    width: 300rpx;
   }
   .card-media {
-    width: 350rpx;
+    width: 300rpx;
+    height: 390rpx;
   }
   .card-content {
     position: absolute;
-    top: 230rpx;
-    width: 350rpx;
-    height: 90rpx;
-    background-color: rgba(238, 238, 238, 0.3);
+    text-align: center;
+    top: 260rpx;
+    width: 300rpx;
+    height: 140rpx;
+    font-family: cursive;
+    color: #F5F5F5;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .card-title {
-    font-weight: 900;
+    font-weight: 500;
+    font-size: 30rpx;
   }
-  .card-p {
-    white-space: nowrap;
-    font-size: 30rpx
+  .movie-score {
+    font-size: 30rpx;
   }
 </style>
