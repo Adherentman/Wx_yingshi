@@ -14,10 +14,14 @@
       </div>
     </div>
     <div class="plotPanels">
-      <div class="plotScm">
-        剧情：
-        <br/>
-        {{movieScm}}
+      <div class="plotDetail">
+        <div @click="clickShow">
+          剧情：{{movieScm}}
+        </div>
+        <div v-if="true">
+          {{movieDra}}
+        </div>
+        <div v-else></div>
       </div>
     </div>
     <div class="plotPanels">
@@ -32,7 +36,28 @@
 
 <script>
 export default {
-  props: ['movieUrl', 'movieName', 'movieTime', 'movieSrc', 'movieDur', 'movieRt', 'movieDir', 'movieVer', 'movieScm', 'movieStar'],
+  data: {
+    isShowing: true
+  },
+  props: [
+    'movieUrl',
+    'movieName',
+    'movieTime',
+    'movieSrc',
+    'movieDur',
+    'movieRt',
+    'movieDir',
+    'movieVer',
+    'movieScm',
+    'movieStar',
+    'movieDra'
+    ],
+  methods: {
+    clickShow(){
+      this.isShowing = !this.isShowing;
+      console.log(this.isShowing, 'CurrentisShowing');
+    }
+  },
 }
 </script>
 
@@ -76,7 +101,7 @@ export default {
   text-align: justify;
   padding: 30rpx;
 }
-.plotScm {
+.plotDetail {
 }
 </style>
 

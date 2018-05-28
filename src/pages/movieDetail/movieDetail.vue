@@ -10,6 +10,7 @@
       :movieDir="MovieDetailModel.dir"
       :movieVer="MovieDetailModel.ver"
       :movieScm="MovieDetailModel.scm"
+      :movieDra="DraPolt"
       :movieStar="MovieDetailModel.star"
     >
     </movielist>
@@ -28,13 +29,16 @@ export default {
     movielist
   },
   data: {
-    MovieDetailModel: {}
+    MovieDetailModel: {},
+    DraPolt: ''
   },
   methods: {
     MoiveDetails(id){
       MaoYanRequest(`movie/${id}.json`).then((data) => {
         console.log(data.data)
         this.MovieDetailModel = data.data.MovieDetailModel
+        let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
+        this.DraPolt = Dra;
     })
     }
   }
