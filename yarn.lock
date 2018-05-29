@@ -3153,9 +3153,9 @@ mpvue-loader@^1.0.13:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.5.3"
 
-mpvue-template-compiler@^1.0.11:
-  version "1.0.11"
-  resolved "http://registry.npm.taobao.org/mpvue-template-compiler/download/mpvue-template-compiler-1.0.11.tgz#aab4f89c07b98030b8be3009002f8b953a2b4f68"
+mpvue-template-compiler@^1.0.12:
+  version "1.0.12"
+  resolved "http://registry.npm.taobao.org/mpvue-template-compiler/download/mpvue-template-compiler-1.0.12.tgz#79a6f87d1d1bbd726fd1841bc19271b526c38bc7"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3166,9 +3166,9 @@ mpvue-webpack-target@^1.0.0:
   dependencies:
     webpack "^3.4.0"
 
-mpvue@^1.0.11:
-  version "1.0.11"
-  resolved "http://registry.npm.taobao.org/mpvue/download/mpvue-1.0.11.tgz#65b2f9c8c35b8447d020f10e47bdc2ff51a2e13d"
+mpvue@^1.0.12:
+  version "1.0.12"
+  resolved "http://registry.npm.taobao.org/mpvue/download/mpvue-1.0.12.tgz#03610de052050861edf36b873df91b30623ad233"
 
 ms@2.0.0:
   version "2.0.0"

@@ -17,11 +17,15 @@
       <div class="plotDetail">
         <div @click="clickShow">
           剧情：{{movieScm}}
+            <div class="iconfont icon-xiajiantou" v-if="isShowing"></div>
+            <div v-else></div>
+          <div :animation="animationData">
+            <div v-if="isShowing"></div>
+            <div v-else>
+              {{movieDra}}
+            </div>
+          </div>
         </div>
-        <div v-if="true">
-          {{movieDra}}
-        </div>
-        <div v-else></div>
       </div>
     </div>
     <div class="plotPanels">
@@ -36,8 +40,11 @@
 
 <script>
 export default {
-  data: {
-    isShowing: true
+  data(){
+    return{
+      isShowing: true,
+      animationData: {}
+    }
   },
   props: [
     'movieUrl',
@@ -55,9 +62,18 @@ export default {
   methods: {
     clickShow(){
       this.isShowing = !this.isShowing;
-      console.log(this.isShowing, 'CurrentisShowing');
-    }
-  },
+      let animation = wx.createAnimation({
+        duration: 2000,
+        timingFunction: "ease",
+        delay: 0,
+        transformOrigin: "50% 50%"
+      });
+        this.animation = animation;
+        animation.translateY(5).step()
+        animation.translateY(-1).step()
+        this.animationData = animation.export()
+    },
+  }
 }
 </script>
 
@@ -103,5 +119,29 @@ export default {
 }
 .plotDetail {
 }
+
+@font-face {
+  font-family: 'iconfont';  /* project id 686354 */
+  src: url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.eot');
+  src: url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 22px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-xiajiantou:before { content: "\e62c"; }
+
+.icon-shangjiantou:before { content: "\e62d"; }
+
 </style>
 

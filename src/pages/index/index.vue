@@ -53,8 +53,12 @@ export default {
   },
   methods: {
     getMovieList(){
+      wx.showLoading({
+        title: '数据加载中',
+      })
       MaoYanRequest('movie/list.json', {type: 'hot', offset: '0', limit: '1000'}).then((data) => {
         this.movieInfo = data.data.movies;
+        wx.hideLoading()
       })
     },
     getMoiveDetails(id){

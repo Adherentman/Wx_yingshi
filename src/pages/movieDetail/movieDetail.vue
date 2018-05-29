@@ -23,6 +23,9 @@ import { MaoYanRequest } from '../../utils/request.js';
 
 export default {
   async onLoad(option) {
+    wx.setNavigationBarTitle({
+      title: '影片详情'
+    })
     this.MoiveDetails(option.id);
   },
   components: {
@@ -34,11 +37,15 @@ export default {
   },
   methods: {
     MoiveDetails(id){
+      wx.showLoading({
+        title: '数据加载中',
+      })
       MaoYanRequest(`movie/${id}.json`).then((data) => {
         console.log(data.data)
         this.MovieDetailModel = data.data.MovieDetailModel
         let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
         this.DraPolt = Dra;
+        wx.hideLoading()
     })
     }
   }
