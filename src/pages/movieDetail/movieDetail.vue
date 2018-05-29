@@ -11,9 +11,15 @@
       :movieVer="MovieDetailModel.ver"
       :movieScm="MovieDetailModel.scm"
       :movieDra="DraPolt"
-      :movieStar="MovieDetailModel.star"
     >
     </movielist>
+    <div class="plotPanels">
+      <div v-for="(item, index) in MovieStar" :key="index">
+        <ul>
+          <li>{{item}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,7 +39,8 @@ export default {
   },
   data: {
     MovieDetailModel: {},
-    DraPolt: ''
+    DraPolt: '',
+    MovieStar: []
   },
   methods: {
     MoiveDetails(id){
@@ -45,6 +52,10 @@ export default {
         this.MovieDetailModel = data.data.MovieDetailModel
         let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
         this.DraPolt = Dra;
+        let MovieStar = this.MovieDetailModel.star.replace(/\s+/g, '\n');
+        let MovieStarArray = MovieStar.split('\n');
+        this.MovieStar = MovieStarArray;
+        console.log(MovieStarArray)
         wx.hideLoading()
     })
     }
@@ -53,5 +64,12 @@ export default {
 </script>
 
 <style>
-
+.plotPanels {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 20rpx;
+  background-color: #EEEEEE;
+  color: #4d4d4d;
+  text-align: justify;
+  padding: 30rpx;
+}
 </style>

@@ -28,13 +28,6 @@
         </div>
       </div>
     </div>
-    <div class="plotPanels">
-      <div class="plotScm">
-        演员：
-        <br/>
-        {{movieStar}}
-      </div>
-    </div>
   </div>
 </template>
 
@@ -56,8 +49,7 @@ export default {
     'movieDir',
     'movieVer',
     'movieScm',
-    'movieStar',
-    'movieDra'
+    'movieDra',
     ],
   methods: {
     clickShow(){
