@@ -46,16 +46,14 @@ export default {
     MoiveDetails(id){
       wx.showLoading({
         title: '数据加载中',
-      })
+      });
       MaoYanRequest(`movie/${id}.json`).then((data) => {
         console.log(data.data)
         this.MovieDetailModel = data.data.MovieDetailModel
         let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
         this.DraPolt = Dra;
-        let MovieStar = this.MovieDetailModel.star.replace(/\s+/g, '\n');
-        let MovieStarArray = MovieStar.split('\n');
+        let MovieStarArray = this.MovieDetailModel.star.replace(/\s+/g, '\n').split('\n');
         this.MovieStar = MovieStarArray;
-        console.log(MovieStarArray)
         wx.hideLoading()
     })
     }

@@ -28,6 +28,14 @@
         </div>
       </div>
     </div>
+    {{children}}
+    <!-- <div class="plotPanels">
+      <div class="plotScm">
+        演员：
+        <br/>
+        {{movieStar}}
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -54,16 +62,16 @@ export default {
   methods: {
     clickShow(){
       this.isShowing = !this.isShowing;
-      let animation = wx.createAnimation({
-        duration: 2000,
-        timingFunction: "ease",
-        delay: 0,
-        transformOrigin: "50% 50%"
-      });
-        this.animation = animation;
-        animation.translateY(5).step()
-        animation.translateY(-1).step()
-        this.animationData = animation.export()
+      // let animation = wx.createAnimation({
+      //   duration: 2000,
+      //   timingFunction: "ease",
+      //   delay: 0,
+      //   transformOrigin: "50% 50%"
+      // });
+      //   this.animation = animation;
+      //   animation.translateY(5).step()
+      //   animation.translateY(-1).step()
+      //   this.animationData = animation.export()
     },
   }
 }
