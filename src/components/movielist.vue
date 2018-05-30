@@ -117,8 +117,6 @@ export default {
   text-align: justify;
   padding: 30rpx;
 }
-.plotDetail {
-}
 
 @font-face {
   font-family: 'iconfont';  /* project id 686354 */

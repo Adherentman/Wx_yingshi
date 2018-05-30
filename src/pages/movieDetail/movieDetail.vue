@@ -13,13 +13,17 @@
       :movieDra="DraPolt"
     >
     </movielist>
-    <div class="plotPanels">
+
+    <scroll-view scroll-x style="background-color: #EEEEEE;margin-top: 30rpx;">
+    <div class="plotStar">
+      演员：
       <div v-for="(item, index) in MovieStar" :key="index">
-        <ul>
-          <li>{{item}}</li>
-        </ul>
+        <!-- <ul> -->
+          <div class="plotStyle">{{item}}</div>
+        <!-- </ul> -->
       </div>
     </div>
+      </scroll-view>
   </div>
 </template>
 
@@ -62,12 +66,15 @@ export default {
 </script>
 
 <style>
-.plotPanels {
+.plotStar {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 20rpx;
-  background-color: #EEEEEE;
-  color: #4d4d4d;
-  text-align: justify;
   padding: 30rpx;
+  color: #4d4d4d;
+  width: 100%;  
+  display: flex;
+}
+.plotStyle {
+  padding-right: 20rpx 
 }
 </style>
