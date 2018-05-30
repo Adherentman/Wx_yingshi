@@ -29,13 +29,6 @@
       </div>
     </div>
     {{children}}
-    <!-- <div class="plotPanels">
-      <div class="plotScm">
-        演员：
-        <br/>
-        {{movieStar}}
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -135,6 +128,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
+  margin-top: 10rpx;
 }
 
 .icon-xiajiantou:before { content: "\e62c"; }
