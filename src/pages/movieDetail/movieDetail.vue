@@ -13,17 +13,26 @@
       :movieDra="DraPolt"
     >
     </movielist>
-
     <scroll-view scroll-x style="background-color: #EEEEEE;margin-top: 30rpx;">
-    <div class="plotStar">
-      演员：
-      <div v-for="(item, index) in MovieStar" :key="index">
-        <!-- <ul> -->
+      <div class="plotStar">
+        演员：
+        <div v-for="(item, index) in MovieStar" :key="index">
           <div class="plotStyle">{{item}}</div>
-        <!-- </ul> -->
+        </div>
+      </div>
+    </scroll-view>
+    <div class="comment-card">
+      <div class="comment-header">
+          <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel.hcmts[2].avatarurl ? CommentResModel.hcmts[1].avatarurl : defautAvatar]"/>
+          <p>{{CommentResModel.hcmts[0].nickName}}</p>
+      </div>
+      <div class="comment-main">
+
+      </div>
+      <div class="comment-footer">
+
       </div>
     </div>
-      </scroll-view>
   </div>
 </template>
 
@@ -44,7 +53,9 @@ export default {
   data: {
     MovieDetailModel: {},
     DraPolt: '',
-    MovieStar: []
+    MovieStar: [],
+    CommentResModel: {},
+    defautAvatar: 'https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/defAvatar.jpg'
   },
   methods: {
     MoiveDetails(id){
@@ -53,7 +64,8 @@ export default {
       });
       MaoYanRequest(`movie/${id}.json`).then((data) => {
         console.log(data.data)
-        this.MovieDetailModel = data.data.MovieDetailModel
+        this.MovieDetailModel = data.data.MovieDetailModel;
+        this.CommentResModel = data.data.CommentResponseModel;
         let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
         this.DraPolt = Dra;
         let MovieStarArray = this.MovieDetailModel.star.replace(/\s+/g, '\n').split('\n');
@@ -76,5 +88,29 @@ export default {
 }
 .plotStyle {
   padding-right: 20rpx 
+}
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  border: 1px solid black;
+  height: 250rpx;
+}
+.comment-header {
+  display: flex;
+  flex: 1;
+}
+.comment-main {
+  display: flex;
+  flex: 2;
+}
+.comment-footer {
+  display: flex;
+  flex: 1;
+}
+.comment-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
 }
 </style>
