@@ -21,30 +21,31 @@
         </div>
       </div>
     </scroll-view>
-    <div class="comment-card">
-      <div class="comment-header">
-          <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel.hcmts[2].avatarurl ? CommentResModel.hcmts[1].avatarurl : defautAvatar]"/>
-          <p>{{CommentResModel.hcmts[0].nickName}}</p>
-      </div>
-      <div class="comment-main">
 
-      </div>
-      <div class="comment-footer">
-
-      </div>
+    <div v-for="(item, index) in CommentResModel" :key="index">
+      <div class="comment-card">
+        <div class="comment-header">
+          <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
+          <p>{{CommentResModel[index].nickName}}</p>
+        </div>
+        <div class="comment-main">
+        </div>
+        <div class="comment-footer">
+        </div>
+      </div> 
     </div>
   </div>
 </template>
 
 <script>
-import movielist from '@/components/movielist';
-import { MaoYanRequest } from '../../utils/request.js';
+import movielist from "@/components/movielist";
+import { MaoYanRequest } from "../../utils/request.js";
 
 export default {
   async onLoad(option) {
     wx.setNavigationBarTitle({
-      title: '影片详情'
-    })
+      title: "影片详情"
+    });
     this.MoiveDetails(option.id);
   },
   components: {
@@ -52,42 +53,45 @@ export default {
   },
   data: {
     MovieDetailModel: {},
-    DraPolt: '',
+    DraPolt: "",
     MovieStar: [],
     CommentResModel: {},
-    defautAvatar: 'https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/defAvatar.jpg'
+    defautAvatar:
+      "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/defAvatar.jpg"
   },
   methods: {
-    MoiveDetails(id){
+    MoiveDetails(id) {
       wx.showLoading({
-        title: '数据加载中',
+        title: "数据加载中"
       });
-      MaoYanRequest(`movie/${id}.json`).then((data) => {
-        console.log(data.data)
+      MaoYanRequest(`movie/${id}.json`).then(data => {
+        console.log(data.data);
         this.MovieDetailModel = data.data.MovieDetailModel;
-        this.CommentResModel = data.data.CommentResponseModel;
-        let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g,"");
+        this.CommentResModel = data.data.CommentResponseModel.hcmts;
+        let Dra = this.MovieDetailModel.dra.replace(/<[^>]+>/g, "");
         this.DraPolt = Dra;
-        let MovieStarArray = this.MovieDetailModel.star.replace(/\s+/g, '\n').split('\n');
+        let MovieStarArray = this.MovieDetailModel.star
+          .replace(/\s+/g, "\n")
+          .split("\n");
         this.MovieStar = MovieStarArray;
-        wx.hideLoading()
-    })
+        wx.hideLoading();
+      });
     }
   }
-}
+};
 </script>
 
 <style>
 .plotStar {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: 20rpx;
   padding: 30rpx;
   color: #4d4d4d;
-  width: 100%;  
+  width: 100%;
   display: flex;
 }
 .plotStyle {
-  padding-right: 20rpx 
+  padding-right: 20rpx;
 }
 .comment-card {
   display: flex;
