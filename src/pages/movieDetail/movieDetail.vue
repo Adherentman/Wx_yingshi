@@ -21,37 +21,43 @@
         </div>
       </div>
     </scroll-view>
+
       <div style="margin-top: 35rpx;">
         <div style="border-bottom: 5rpx solid #26A69A;">
           <div style="margin-bottom: 25rpx; font-size: 45rpx;">短评</div>
         </div>
       </div>
-        <div v-if="CommentResModel.length !== 0">
-          <div v-for="(item, index) in CommentResModel" :key="index">
-            <div class="comment-card">
-              <div class="comment-header">
-                <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
-                <div class="comment-nameAndScore">
-                  <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
-                  <div class="commentScoreIconfont icon-star">
-                    <p style="font-size: 30rpx; magrin-left: 30rpx; color: black">{{CommentResModel[index].score * 2}}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="comment-main">
-                <div class="comment-content">{{CommentResModel[index].content}}</div>
-              </div>
-              <div class="comment-footer">
-                <div class="comment-time">{{CommentResModel[index].time}}</div>
-                <div class="comment-content2">
-                  <div class="comment-approve commentApproveIconfont icon-dianzan">{{CommentResModel[index].approve}}</div>
-                  <div class="comment-reply commentReplyIconfont icon-huifu">{{CommentResModel[index].reply}}</div>
+      
+      <div v-if="CommentResModel.length !== 0">
+        <div v-for="(item, index) in CommentResModel" :key="index">
+          <div class="comment-card">
+
+            <div class="comment-header">
+              <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
+              <div class="comment-nameAndScore">
+                <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
+                <div class="commentScoreIconfont icon-star">
+                  <p style="font-size: 30rpx; magrin-left: 30rpx; color: black">{{CommentResModel[index].score * 2}}</p>
                 </div>
               </div>
             </div>
+
+            <div class="comment-main">
+              <div class="comment-content">{{CommentResModel[index].content}}</div>
+            </div>
+            
+            <div class="comment-footer">
+              <div class="comment-time">{{CommentResModel[index].time}}</div>
+              <div class="comment-content2">
+                <div class="comment-approve commentApproveIconfont icon-dianzan">{{CommentResModel[index].approve}}</div>
+                <div class="comment-reply commentReplyIconfont icon-huifu">{{CommentResModel[index].reply}}</div>
+              </div>
+            </div>
           </div>
-      </div>
+        </div>
+    </div>
     <div v-else>暂无评论！</div>
+
   </div>
 </template>
 
