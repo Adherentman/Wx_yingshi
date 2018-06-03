@@ -26,13 +26,13 @@
       <div class="comment-card">
         <div class="comment-header">
           <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
-          <p>{{CommentResModel[index].nickName}}</p>
+          <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
         </div>
         <div class="comment-main">
         </div>
         <div class="comment-footer">
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </template>
@@ -96,7 +96,7 @@ export default {
 .comment-card {
   display: flex;
   flex-direction: column;
-  margin-top: 10rpx;
+  margin-top: 30rpx;
   border: 1px solid black;
   height: 250rpx;
 }
@@ -116,5 +116,9 @@ export default {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
+}
+.comment-nickname {
+  font-size: 30rpx;
+  margin-left: 20rpx;
 }
 </style>
