@@ -21,19 +21,37 @@
         </div>
       </div>
     </scroll-view>
-
-    <div v-for="(item, index) in CommentResModel" :key="index">
-      <div class="comment-card">
-        <div class="comment-header">
-          <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
-          <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
-        </div>
-        <div class="comment-main">
-        </div>
-        <div class="comment-footer">
+      <div style="margin-top: 35rpx;">
+        <div style="border-bottom: 5rpx solid #26A69A;">
+          <div style="margin-bottom: 25rpx; font-size: 45rpx;">短评</div>
         </div>
       </div>
-    </div>
+        <div v-if="CommentResModel.length !== 0">
+          <div v-for="(item, index) in CommentResModel" :key="index">
+            <div class="comment-card">
+              <div class="comment-header">
+                <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
+                <div class="comment-nameAndScore">
+                  <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
+                  <div class="commentScoreIconfont icon-star">
+                    <p style="font-size: 30rpx; magrin-left: 30rpx; color: black">{{CommentResModel[index].score * 2}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-main">
+                <div class="comment-content">{{CommentResModel[index].content}}</div>
+              </div>
+              <div class="comment-footer">
+                <div class="comment-time">{{CommentResModel[index].time}}</div>
+                <div class="comment-content2">
+                  <div class="comment-approve commentApproveIconfont icon-dianzan">{{CommentResModel[index].approve}}</div>
+                  <div class="comment-reply commentReplyIconfont icon-huifu">{{CommentResModel[index].reply}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    <div v-else>暂无评论！</div>
   </div>
 </template>
 
@@ -97,28 +115,72 @@ export default {
   display: flex;
   flex-direction: column;
   margin-top: 30rpx;
-  border: 1px solid black;
-  height: 250rpx;
+  height: 100%;
 }
 .comment-header {
   display: flex;
-  flex: 1;
 }
 .comment-main {
   display: flex;
-  flex: 2;
 }
 .comment-footer {
   display: flex;
-  flex: 1;
+  justify-content: space-between;
 }
 .comment-avatar {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
 }
+.comment-nameAndScore {
+  display: flex;
+  flex-direction: column;
+}
 .comment-nickname {
   font-size: 30rpx;
   margin-left: 20rpx;
+}
+.commentScoreIconfont {
+  display: flex;
+  flex-direction: row;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 20rpx;
+  color: #FFC107;
+}
+
+.commentApproveIconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #EF5350;
+}
+.commentReplyIconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 20rpx;
+  color: #2196F3
+
+}
+.comment-content {
+  margin-left: 110rpx;
+  font-size: 28rpx;
+}
+.comment-time {
+  font-size: 25rpx;
+  margin-top: 30rpx;
+  margin-left: 110rpx;
+  border-bottom: 5rpx solid #26A69A;
+}
+.comment-content2{
+  display: flex;
+  /* margin-left: 180rpx; */
+  margin-top: 20rpx;
+  font-size: 30rpx;
 }
 </style>

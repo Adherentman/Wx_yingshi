@@ -17,7 +17,7 @@
       <div class="plotDetail">
         <div @click="clickShow">
           剧情：{{movieScm}}
-            <div class="iconfont icon-xiajiantou" v-if="isShowing"></div>
+            <div class="Listiconfont icon-xiajiantou" v-if="isShowing"></div>
             <div v-else></div>
           <div :animation="animationData">
             <div v-if="isShowing"></div>
@@ -113,14 +113,14 @@ export default {
 
 @font-face {
   font-family: 'iconfont';  /* project id 686354 */
-  src: url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.eot');
-  src: url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_686354_bfoz6l4wmmzehfr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.eot');
+  src: url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.svg#iconfont') format('svg');
 }
 
-.iconfont {
+.Listiconfont {
   font-family: "iconfont" !important;
   font-size: 22px;
   font-style: normal;
@@ -135,5 +135,10 @@ export default {
 
 .icon-shangjiantou:before { content: "\e62d"; }
 
+.icon-huifu:before { content: "\e60d"; }
+
+.icon-star:before { content: "\e60c"; }
+
+.icon-dianzan:before { content: "\e613"; }
 </style>
 
