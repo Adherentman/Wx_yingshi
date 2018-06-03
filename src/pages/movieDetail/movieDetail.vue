@@ -45,7 +45,7 @@
             <div class="comment-main">
               <div class="comment-content">{{CommentResModel[index].content}}</div>
             </div>
-            
+
             <div class="comment-footer">
               <div class="comment-time">{{CommentResModel[index].time}}</div>
               <div class="comment-content2">
@@ -114,38 +114,47 @@ export default {
   width: 100%;
   display: flex;
 }
+
 .plotStyle {
   padding-right: 20rpx;
 }
+
 .comment-card {
   display: flex;
   flex-direction: column;
   margin-top: 30rpx;
   height: 100%;
 }
+
 .comment-header {
   display: flex;
 }
+
 .comment-main {
   display: flex;
 }
+
 .comment-footer {
   display: flex;
   justify-content: space-between;
 }
+
 .comment-avatar {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
 }
+
 .comment-nameAndScore {
   display: flex;
   flex-direction: column;
 }
+
 .comment-nickname {
   font-size: 30rpx;
   margin-left: 20rpx;
 }
+
 .commentScoreIconfont {
   display: flex;
   flex-direction: row;
@@ -177,15 +186,16 @@ export default {
   margin-left: 110rpx;
   font-size: 28rpx;
 }
+
 .comment-time {
   font-size: 25rpx;
   margin-top: 30rpx;
   margin-left: 110rpx;
   border-bottom: 5rpx solid #26A69A;
 }
+
 .comment-content2{
   display: flex;
-  /* margin-left: 180rpx; */
   margin-top: 20rpx;
   font-size: 30rpx;
 }

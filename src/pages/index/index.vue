@@ -1,5 +1,6 @@
 <template>
  <div class="container">
+
   <div>
     <swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" class="swiper">
       <block v-for="(item, index) in imgUrls" :key="index">
@@ -9,11 +10,12 @@
       </block>
     </swiper>
   </div>
+
   <div>
     <div class="card-header">
-    <div class="card-header-line-left">——————</div>
-    <h1 class="card-header-h1">正 在 热 映</h1>
-    <div class="card-header-line-right">——————</div>
+      <div class="card-header-line-left">——————</div>
+      <h1 class="card-header-h1">正 在 热 映</h1>
+      <div class="card-header-line-right">——————</div>
     </div>
     <scroll-view scroll-x class="card-paper">
       <div class="cards">
@@ -77,30 +79,37 @@ export default {
 .swiper {
   height: 350rpx;
 }
+
 .swiper-image {
   width: 100%;
 }
+
 .card-header {
   display: flex;
   justify-content: center;
   padding: 20rpx
 }
+
 .card-header-h1 {
   font-weight: 600;
 }
+
 .card-header-line-left {
   display: flex;
   margin-right: 30rpx;
   color: rgb(184, 181, 181);
 }
+
 .card-header-line-right {
   display: flex;
   margin-left: 30rpx;
   color: rgb(184, 181, 181);
 }
+
 .cards {
   display: flex;
 }
+
 .card-paper {
   width: 100%;
 }

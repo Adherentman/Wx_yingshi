@@ -1,5 +1,6 @@
 <template>
   <div class="mvdcontent">
+
     <div class="topDeatils">
       <div class="deatilsLeft">
         <image :src="movieUrl" :mode="aspectFit" class="deatilImg"/>
@@ -13,18 +14,19 @@
         <div>影厅:  {{movieVer}}</div>
       </div>
     </div>
+
     <div class="plotPanels">
       <div class="plotDetail">
         <div @click="clickShow">
           剧情：{{movieScm}}
             <div class="Listiconfont icon-xiajiantou" v-if="isShowing"></div>
             <div v-else></div>
-          <div :animation="animationData">
-            <div v-if="isShowing"></div>
-            <div v-else>
-              {{movieDra}}
+            <div :animation="animationData">
+              <div v-if="isShowing"></div>
+              <div v-else>
+                {{movieDra}}
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -75,6 +77,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 .topDeatils {
   display: flex;
   flex-direction: row;
@@ -83,17 +86,20 @@ export default {
   height: 400rpx;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .deatilImg {
   width: 250rpx;
   height: 350rpx;
   justify-content: center;
 }
+
 .deatilsLeft {
   width: 280rpx;
   padding-top: 30rpx;
   padding-left: 30rpx;
   padding-right: 20rpx;
 }
+
 .detailsRight {
   display: flex;
   flex-direction: column;
@@ -102,6 +108,7 @@ export default {
   font-size: 35rpx;
   color: #757575;
 }
+
 .plotPanels {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 20rpx;
