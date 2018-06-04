@@ -13,14 +13,18 @@
       :movieDra="DraPolt"
     >
     </movielist>
-    <scroll-view scroll-x style="background-color: #EEEEEE;margin-top: 30rpx;">
-      <div class="plotStar">
-        演员：
-        <div v-for="(item, index) in MovieStar" :key="index">
-          <div class="plotStyle">{{item}}</div>
+      <div style="background-color: #EEEEEE;">
+        <div class="plotStar">
+          <div>
+            演员：
+          </div>
+          <div class="plotStyle">
+            <div v-for="(item, index) in MovieStar" :key="index" style="padding-left: 30rpx">
+              {{item}}
+            </div>
+          </div>
         </div>
-      </div>
-    </scroll-view>
+    </div>
 
       <div style="margin-top: 35rpx;">
         <div style="border-bottom: 5rpx solid #26A69A;">
@@ -111,12 +115,13 @@ export default {
   margin-top: 20rpx;
   padding: 30rpx;
   color: #4d4d4d;
-  width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 .plotStyle {
-  padding-right: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .comment-card {
