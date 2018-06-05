@@ -35,9 +35,9 @@ export default {
       },
       {
         pagePath: 'pages/form/main',
-        iconPath: '/static/images/tabBars/hammer_nail.png',
-        selectedIconPath: '/static/images/tabBars/selectHammer_nail.png',
-        text: '预约'
+        iconPath: '/static/images/tabBars/xingqiu.png',
+        selectedIconPath: '/static/images/tabBars/selectxingqiu.png',
+        text: '星座'
       }]
     }
   }
