@@ -111,7 +111,7 @@ export default {
 
 .plotPanels {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-top: 20rpx;
+  margin-top: 35rpx;
   background-color: #EEEEEE;
   color: #4d4d4d;
   text-align: justify;
@@ -136,6 +136,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 10rpx;
+  color: #26A69A;
 }
 
 .icon-xiajiantou:before { content: "\e62c"; }

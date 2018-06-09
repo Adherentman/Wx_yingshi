@@ -13,55 +13,56 @@
       :movieDra="DraPolt"
     >
     </movielist>
-      <div style="background-color: #EEEEEE;">
-        <div class="plotStar">
-          <div>
-            演员：
-          </div>
-          <div class="plotStyle">
-            <div v-for="(item, index) in MovieStar" :key="index" style="padding-left: 30rpx">
-              {{item}}
-            </div>
-          </div>
+    <!-- <div style="background-color: #EEEEEE;">
+      <div class="plotStar">
+        <div>
+          演员：
         </div>
-    </div>
-
-      <div style="margin-top: 35rpx;">
-        <div style="border-bottom: 5rpx solid #26A69A;">
-          <div style="margin-bottom: 25rpx; font-size: 45rpx;">短评</div>
+        <div class="plotStyle">
+          <div v-for="(item, index) in MovieStar" :key="index" style="padding-left: 30rpx">
+            {{item}}
+          </div>
         </div>
       </div>
-      
-      <div v-if="CommentResModel.length !== 0">
-        <div v-for="(item, index) in CommentResModel" :key="index">
-          <div class="comment-card">
+    </div> -->
 
-            <div class="comment-header">
-              <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
-              <div class="comment-nameAndScore">
-                <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
-                <div class="commentScoreIconfont icon-star">
-                  <p style="font-size: 30rpx; magrin-left: 30rpx; color: black">{{CommentResModel[index].score * 2}}</p>
-                </div>
-              </div>
-            </div>
+    <video :src="MovieDetailModel.vd" autoplay style="width: 100%; height: 400rpx; margin-top: 35rpx;" />
 
-            <div class="comment-main">
-              <div class="comment-content">{{CommentResModel[index].content}}</div>
-            </div>
+    <div style="margin-top: 35rpx;">
+      <div style="border-bottom: 5rpx solid #26A69A;">
+        <div style="margin-bottom: 25rpx; font-size: 45rpx;">短评</div>
+      </div>
+    </div>
+    
+    <div v-if="CommentResModel.length !== 0">
+      <div v-for="(item, index) in CommentResModel" :key="index">
+        <div class="comment-card">
 
-            <div class="comment-footer">
-              <div class="comment-time">{{CommentResModel[index].time}}</div>
-              <div class="comment-content2">
-                <div class="comment-approve commentApproveIconfont icon-dianzan">{{CommentResModel[index].approve}}</div>
-                <div class="comment-reply commentReplyIconfont icon-huifu">{{CommentResModel[index].reply}}</div>
+          <div class="comment-header">
+            <image class="comment-avatar" :mode="aspectFit" :src="[CommentResModel[index].avatarurl ? CommentResModel[index].avatarurl : defautAvatar]"/>
+            <div class="comment-nameAndScore">
+              <p class="comment-nickname">{{CommentResModel[index].nickName}}</p>
+              <div class="commentScoreIconfont icon-star">
+                <p style="font-size: 30rpx; magrin-left: 30rpx; color: black">{{CommentResModel[index].score * 2}}</p>
               </div>
             </div>
           </div>
+
+          <div class="comment-main">
+            <div class="comment-content">{{CommentResModel[index].content}}</div>
+          </div>
+
+          <div class="comment-footer">
+            <div class="comment-time">{{CommentResModel[index].time}}</div>
+            <div class="comment-content2">
+              <div class="comment-approve commentApproveIconfont icon-dianzan">{{CommentResModel[index].approve}}</div>
+              <div class="comment-reply commentReplyIconfont icon-huifu">{{CommentResModel[index].reply}}</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <div v-else>暂无评论！</div>
-
   </div>
 </template>
 
