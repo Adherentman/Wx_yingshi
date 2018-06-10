@@ -1,28 +1,47 @@
 <template>
   <div class="tomorrowSwiper">
+    
     <div class="detailTop">
       <image class="TopImage" :src="otherImage" :mode="aspectFit" />
       <div class="TopLine">
-        <div>明日运势</div>
-        <div>{{datetime}}</div>
+        <div>今日运势</div>
+        <div v-if="datetime">{{datetime}}</div>
+        <div v-else></div>
       </div>   
     </div>
 
     <div class="ContentBack">
+
       <div class="CenterLine">
-        <div>综合指数: {{all}}</div>
-        <div>健康指数: {{helath}}</div>
-        <div>爱情指数: {{love}}</div>
-        <div>财运指数: {{money}}</div>
-        <div>工作指数: {{work}}</div>
-        <div>速配星座: {{QFriend}}</div>
-        <div>幸运数字: {{number}}</div>
-        <div>幸运色: {{color}}</div>
+        <div class="CenterLeft">
+          <div v-if="all">综合指数: {{all}}</div>
+          <div v-else></div>
+          <div v-if="helath">健康指数: {{helath}}</div>
+          <div v-else></div>
+          <div v-if="work">工作指数: {{work}}</div>  
+          <div v-else></div>
+          <div v-if="QFriend">速配星座: {{QFriend}}</div>
+          <div v-else></div>
+        </div>
+        <div class="CenterRight">
+          <div v-if="love">爱情指数: {{love}}</div>
+          <div v-else></div>
+          <div v-if="money">财运指数: {{money}}</div>
+          <div v-else></div>
+          <div v-if="color">幸运色: {{color}}</div>    
+          <div v-else></div>
+          <div v-if="number">幸运数字: {{number}}</div>
+          <div v-else></div>
+        </div>
       </div>
       
       <div class="FooterLine">
-        <div>今日概述: </div>            
-        <div>{{summary}}</div>
+        <div v-if="summary">
+          今日概述: 
+          <br/>
+          {{summary}}
+        </div>
+        <div v-else></div>
       </div>
 
     </div>
@@ -66,11 +85,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 35rpx;
-  color: #F5F5F5;
-}
-
-.FooterLine {
   margin: 35rpx;
   color: #F5F5F5;
 }

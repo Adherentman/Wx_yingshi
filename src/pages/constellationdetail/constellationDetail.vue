@@ -4,16 +4,16 @@
     <swiper-item>
       <todayDetail
         :otherImage="otherImage"
-        :datetime="todayDetails.datetime"
-        :all="todayDetails.all"
-        :helath="todayDetails.helath"
-        :love="todayDetails.love"
-        :money="todayDetails.money"
-        :work="todayDetails.work"
-        :QFriend="todayDetails.QFriend"
-        :number="todayDetails.number"
-        :color="todayDetails.color"
-        :summary="todayDetails.summary"
+        :datetime="detail.datetime"
+        :all="detail.all"
+        :helath="detail.helath"
+        :love="detail.love"
+        :money="detail.money"
+        :work="detail.work"
+        :QFriend="detail.QFriend"
+        :number="detail.number"
+        :color="detail.color"
+        :summary="detail.summary"
       />
     </swiper-item>
 
@@ -144,14 +144,15 @@ export default {
     
     console.log(option.name, option.type, option.image)
     this.otherImage = option.image;
-    await this.getToday(option.name, option.type);
-    await this.getTomorrow(option.name);
-    await this.getWeek(option.name);
-    await this.getMonth(option.name);
-    await this.getYear(option.name);
+    // await this.getToday(option.name, option.type);
+    // await this.getTomorrow(option.name);
+    // await this.getWeek(option.name);
+    // await this.getMonth(option.name);
+    // await this.getYear(option.name);
   },
   components: {
-    todayDetail
+    todayDetail,
+    tomorrowDetail
   },
   data() {
     return {
@@ -165,9 +166,9 @@ export default {
         love: "20%",
         money: "20%",
         name: "摩羯座",
-        number: 0,
+        number: 2,
         summary: "有些思考的小漩涡，可能让你忽然的放空，生活中许多的细节让你感触良多，五味杂陈，常常有时候就慢动作定格，想法在某处冻结停留，陷入一阵自我对话的沉思之中，这个时候你不喜欢被打扰或询问，也不想让某些想法曝光，个性变得有些隐晦",
-        work: "20%"
+        work: "20%",
       },
       todayDetails: {},
       tomorrowDetails: {},
@@ -289,8 +290,4 @@ export default {
   color: #F5F5F5;
 }
 
-.FooterLine {
-  margin: 35rpx;
-  color: #F5F5F5;
-}
 </style>
