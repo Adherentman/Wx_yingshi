@@ -13,7 +13,10 @@
       :movieDra="DraPolt"
     >
     </movielist>
-    <!-- <div style="background-color: #EEEEEE;">
+
+    <video :src="MovieDetailModel.vd" autoplay style="width: 100%; height: 400rpx; margin-top: 35rpx;" />
+
+    <div style="background-color: #EEEEEE;">
       <div class="plotStar">
         <div>
           演员：
@@ -24,10 +27,8 @@
           </div>
         </div>
       </div>
-    </div> -->
-
-    <video :src="MovieDetailModel.vd" autoplay style="width: 100%; height: 400rpx; margin-top: 35rpx;" />
-
+    </div>
+    
     <div style="margin-top: 35rpx;">
       <div style="border-bottom: 5rpx solid #26A69A;">
         <div style="margin-bottom: 25rpx; font-size: 45rpx;">短评</div>
@@ -75,18 +76,20 @@ export default {
     wx.setNavigationBarTitle({
       title: "影片详情"
     });
-    this.MoiveDetails(option.id);
+    // this.MoiveDetails(option.id);
   },
   components: {
     movielist
   },
-  data: {
-    MovieDetailModel: {},
-    DraPolt: "",
-    MovieStar: [],
-    CommentResModel: {},
-    defautAvatar:
-      "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/defAvatar.jpg"
+  data() {
+    return {
+      MovieDetailModel: {},
+      DraPolt: "",
+      MovieStar: [],
+      CommentResModel: {},
+      defautAvatar:
+        "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/defAvatar.jpg"
+    }
   },
   methods: {
     MoiveDetails(id) {
@@ -113,7 +116,7 @@ export default {
 <style>
 .plotStar {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin-top: 20rpx;
+  margin-top: 35rpx;
   padding: 30rpx;
   color: #4d4d4d;
   display: flex;
@@ -128,7 +131,7 @@ export default {
 .comment-card {
   display: flex;
   flex-direction: column;
-  margin-top: 30rpx;
+  margin-top: 35rpx;
   height: 100%;
 }
 

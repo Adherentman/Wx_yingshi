@@ -84,7 +84,7 @@ export default {
   background-color: #212121;
   width: 100%;
   height: 400rpx;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: cursive;
 }
 
 .deatilImg {
@@ -110,7 +110,7 @@ export default {
 }
 
 .plotPanels {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: cursive;
   margin-top: 35rpx;
   background-color: #EEEEEE;
   color: #4d4d4d;
