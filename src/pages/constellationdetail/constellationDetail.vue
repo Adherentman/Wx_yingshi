@@ -2,34 +2,19 @@
   <swiper :indicator-dots="true"  style="height: 1200rpx;">
     <!-- 今日 -->
     <swiper-item>
-      <div class="todaySwiper">
-        <div class="detailTop">
-          <image class="TopImage" :src="otherImage" :mode="aspectFit" />
-          <div class="TopLine">
-            <div>今日运势</div>
-            <div>{{todayDetail.datetime}}</div>
-          </div>   
-        </div>
-
-        <div class="ContentBack">
-          <div class="CenterLine">
-            <div>综合指数: {{todayDetail.all}}</div>
-            <div>健康指数: {{todayDetail.helath}}</div>
-            <div>爱情指数: {{todayDetail.love}}</div>
-            <div>财运指数: {{todayDetail.money}}</div>
-            <div>工作指数: {{todayDetail.work}}</div>
-            <div>速配星座: {{todayDetail.QFriend}}</div>
-            <div>幸运数字: {{todayDetail.number}}</div>
-            <div>幸运色: {{todayDetail.color}}</div>
-          </div>
-          
-          <div class="FooterLine">
-            <div>今日概述: </div>            
-            <div>{{todayDetail.summary}}</div>
-          </div>
-
-        </div>
-      </div>
+      <todayDetail
+        :otherImage="otherImage"
+        :datetime="todayDetail.datetime"
+        :all="todayDetail.all"
+        :helath="todayDetail.helath"
+        :love="todayDetail.love"
+        :money="todayDetail.money"
+        :work="todayDetail.work"
+        :QFriend="todayDetail.QFriend"
+        :number="todayDetail.number"
+        :color="todayDetail.color"
+        :summary="todayDetail.summary"
+      />
     </swiper-item>
 
     <!-- 明天 -->
@@ -164,6 +149,7 @@
 
 <script>
 import { constellationRequest } from '../../utils/request.js';
+import todayDetail from '../../components/todayDetail';
 
 export default {
   async onLoad(option) {
@@ -178,6 +164,9 @@ export default {
     await this.getWeek(option.name);
     await this.getMonth(option.name);
     await this.getYear(option.name);
+  },
+  components: {
+    todayDetail
   },
   data() {
     return {
@@ -255,8 +244,8 @@ export default {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: url(https://pic3.zhimg.com/80/cd699c0cf5f43ddfc5f1044cf549111a_hd.jpg) no-repeat;
   background-size: 100% 100%;
-
 }
+
 .tomorrowSwiper {
   display: flex;
   flex-direction: column;
