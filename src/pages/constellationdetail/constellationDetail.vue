@@ -4,49 +4,34 @@
     <swiper-item>
       <todayDetail
         :otherImage="otherImage"
-        :datetime="todayDetail.datetime"
-        :all="todayDetail.all"
-        :helath="todayDetail.helath"
-        :love="todayDetail.love"
-        :money="todayDetail.money"
-        :work="todayDetail.work"
-        :QFriend="todayDetail.QFriend"
-        :number="todayDetail.number"
-        :color="todayDetail.color"
-        :summary="todayDetail.summary"
+        :datetime="todayDetails.datetime"
+        :all="todayDetails.all"
+        :helath="todayDetails.helath"
+        :love="todayDetails.love"
+        :money="todayDetails.money"
+        :work="todayDetails.work"
+        :QFriend="todayDetails.QFriend"
+        :number="todayDetails.number"
+        :color="todayDetails.color"
+        :summary="todayDetails.summary"
       />
     </swiper-item>
 
     <!-- 明天 -->
     <swiper-item>
-      <div class="tomorrowSwiper">
-        <div class="detailTop">
-          <image class="TopImage" :src="otherImage" :mode="aspectFit" />
-          <div class="TopLine">
-            <div>明日运势</div>
-            <div>{{tomorrowDetail.datetime}}</div>
-          </div>   
-        </div>
-
-        <div class="ContentBack">
-          <div class="CenterLine">
-            <div>综合指数: {{tomorrowDetail.all}}</div>
-            <div>健康指数: {{tomorrowDetail.helath}}</div>
-            <div>爱情指数: {{tomorrowDetail.love}}</div>
-            <div>财运指数: {{tomorrowDetail.money}}</div>
-            <div>工作指数: {{tomorrowDetail.work}}</div>
-            <div>速配星座: {{tomorrowDetail.QFriend}}</div>
-            <div>幸运数字: {{tomorrowDetail.number}}</div>
-            <div>幸运色: {{tomorrowDetail.color}}</div>
-          </div>
-          
-          <div class="FooterLine">
-            <div>今日概述: </div>            
-            <div>{{tomorrowDetail.summary}}</div>
-          </div>
-
-        </div>
-      </div>
+      <tomorrowDetail
+        :otherImage="otherImage"
+        :datetime="tomorrowDetails.datetime"
+        :all="tomorrowDetails.all"
+        :helath="tomorrowDetails.helath"
+        :love="tomorrowDetails.love"
+        :money="tomorrowDetails.money"
+        :work="tomorrowDetails.work"
+        :QFriend="tomorrowDetails.QFriend"
+        :number="tomorrowDetails.number"
+        :color="tomorrowDetails.color"
+        :summary="tomorrowDetails.summary"
+      />
     </swiper-item>
 
     <!-- 本周 -->
@@ -150,7 +135,7 @@
 <script>
 import { constellationRequest } from '../../utils/request.js';
 import todayDetail from '../../components/todayDetail';
-
+import tomorrowDetail from '../../components/tomorrowDetail';
 export default {
   async onLoad(option) {
     wx.setNavigationBarTitle({
@@ -184,11 +169,11 @@ export default {
         summary: "有些思考的小漩涡，可能让你忽然的放空，生活中许多的细节让你感触良多，五味杂陈，常常有时候就慢动作定格，想法在某处冻结停留，陷入一阵自我对话的沉思之中，这个时候你不喜欢被打扰或询问，也不想让某些想法曝光，个性变得有些隐晦",
         work: "20%"
       },
-      todayDetail: {},
-      tomorrowDetail: {},
-      weekDetail: {},
-      monthDetail: {},
-      yearDetail: {}
+      todayDetails: {},
+      tomorrowDetails: {},
+      weekDetails: {},
+      monthDetails: {},
+      yearDetails: {}
     }
   },
   methods: {
@@ -196,7 +181,7 @@ export default {
       console.log(name. type, '名字，类型')
       constellationRequest(`&consName=${name}&type=${type}`).then(data => {
         console.log(data, 'today')
-        this.todayDetail = data;
+        this.todayDetails = data;
       }).catch(err => {
         console.log(err)
       });
@@ -204,7 +189,7 @@ export default {
     getTomorrow(name) {
       constellationRequest(`&consName=${name}&type=tomorrow`).then(data => {
         console.log(data, 'tomorrow')
-        this.tomorrowDetail = data;
+        this.tomorrowDetails = data;
       }).catch(err => {
         console.log(err)
       });
@@ -212,7 +197,7 @@ export default {
     getWeek(name) {
       constellationRequest(`&consName=${name}&type=week`).then(data => {
         console.log(data, 'week')
-        this.weekDetail = data;
+        this.weekDetails = data;
       }).catch(err => {
         console.log(err)
       });
@@ -220,7 +205,7 @@ export default {
     getMonth(name) {
       constellationRequest(`&consName=${name}&type=month`).then(data => {
         console.log(data, 'month')
-        this.monthDetail = data;
+        this.monthDetails = data;
       }).catch(err => {
         console.log(err)
       });
@@ -228,7 +213,7 @@ export default {
     getYear(name) {
       constellationRequest(`&consName=${name}&type=year`).then(data => {
         console.log(data, 'year')
-        this.yearDetail = data;
+        this.yearDetails = data;
       }).catch(err => {
         console.log(err)
       });
