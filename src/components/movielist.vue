@@ -120,11 +120,11 @@ export default {
 
 @font-face {
   font-family: 'iconfont';  /* project id 686354 */
-  src: url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.eot');
-  src: url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_686354_kbwb262tbuik9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_686354_t0246qdcs3kjfw29.eot');
+  src: url('//at.alicdn.com/t/font_686354_t0246qdcs3kjfw29.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_686354_t0246qdcs3kjfw29.woff') format('woff'),
+  url('//at.alicdn.com/t/font_686354_t0246qdcs3kjfw29.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_686354_t0246qdcs3kjfw29.svg#iconfont') format('svg');
 }
 
 .Listiconfont {

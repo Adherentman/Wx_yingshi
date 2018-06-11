@@ -1,5 +1,5 @@
 <template>
-  <swiper :indicator-dots="true"  style="height: 1200rpx;">
+  <swiper :indicator-dots="true"  style="height: 1200rpx;" v-if="isload">
     <!-- 今日 -->
     <swiper-item>
       <todayDetail
@@ -130,6 +130,7 @@
       </div>
     </swiper-item>
   </swiper>
+  <div v-else></div>
 </template>
 
 <script>
@@ -141,7 +142,11 @@ export default {
     wx.setNavigationBarTitle({
       title: "星座详情"
     });
-    
+
+    wx.showLoading({
+      title: '数据加载中',
+    });
+
     console.log(option.name, option.type, option.image)
     this.otherImage = option.image;
     // await this.getToday(option.name, option.type);
@@ -149,6 +154,8 @@ export default {
     // await this.getWeek(option.name);
     // await this.getMonth(option.name);
     // await this.getYear(option.name);
+    this.isload = true;
+    wx.hideLoading();
   },
   components: {
     todayDetail,
@@ -170,6 +177,7 @@ export default {
         summary: "有些思考的小漩涡，可能让你忽然的放空，生活中许多的细节让你感触良多，五味杂陈，常常有时候就慢动作定格，想法在某处冻结停留，陷入一阵自我对话的沉思之中，这个时候你不喜欢被打扰或询问，也不想让某些想法曝光，个性变得有些隐晦",
         work: "20%",
       },
+      isload: false,
       todayDetails: {},
       tomorrowDetails: {},
       weekDetails: {},
@@ -224,70 +232,6 @@ export default {
 </script>
 
 <style>
-.todaySwiper {
-  display: flex;
-  flex-direction: column;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: url(https://pic3.zhimg.com/80/cd699c0cf5f43ddfc5f1044cf549111a_hd.jpg) no-repeat;
-  background-size: 100% 100%;
-}
 
-.tomorrowSwiper {
-  display: flex;
-  flex-direction: column;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: url(https://pic2.zhimg.com/80/00030ba3d076c8833ed749e23f87a109_hd.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.weekSwiper {
-  display: flex;
-  flex-direction: column;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: url(https://pic1.zhimg.com/80/c9eda3e7989e584290e8de7f04f2a33c_hd.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.monthSwiper {
-  display: flex;
-  flex-direction: column;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: url(https://pic2.zhimg.com/80/90789f97d5f7079e019ae2bd4c4ad321_hd.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.yearSwiper {
-  display: flex;
-  flex-direction: column;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: url(https://pic1.zhimg.com/80/f02441a52bca0c96df4a51015d98b8fc_hd.jpg) no-repeat;
-  background-size: 100% 100%;
-}
-
-.detailTop {
-  display: flex;
-  height: 350rpx;
-  align-items: center;
-  justify-content: space-around
-}
-
-.TopImage {
-  width: 300rpx;
-  height: 230rpx;
-}
-
-.TopLine {
-  display: flex;
-  flex-direction: column;
-  color: #F5F5F5;
-  }
-
-.CenterLine {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 35rpx;
-  color: #F5F5F5;
-}
 
 </style>

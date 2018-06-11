@@ -1,5 +1,5 @@
 <template>
-  <div class="constellationContent">
+  <div class="constellationContent" v-if="isLoad">
     <div v-for="(item, index) in TwelveConstellations" :key="index">
       <div @click="getTodayConstellation(item.name, item.type, item.image2)">
         <constellationcard
@@ -9,6 +9,7 @@
       </div>
     </div>
   </div>
+  <div v-else></div>
 </template>
 
 <script>
@@ -19,6 +20,7 @@ export default {
     wx.showLoading({
       title: '数据加载中',
     });
+    this.isLoad = true;
     wx.hideLoading();
   },
   components: {
@@ -39,7 +41,8 @@ export default {
         { name: '摩羯座', image: 'https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/mojie.jpg', date: '12.22 —— 1.19', type: 'today', image2: "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/mojie.png" },
         { name: '水瓶座', image: 'https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/shuiping.jpg', date: '1.20 —— 2.18', type: 'today', image2: "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/shuiping.png" },
         { name: '双鱼座', image: 'https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/shuangyu.jpg', date: '2.19 —— 3.20', type: 'today', image2: "https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/shuangyu.png" },
-      ]
+      ],
+      isLoad: false
     }
   },
   methods: {
