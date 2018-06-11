@@ -12,28 +12,32 @@
       </div>   
     </div>
 
-    <div>{{all}}</div>
-    
-    <div class="HealthBlock" v-if="health">
-      <div class="weekiconfont icon-jiankang" style="color: #FF8A80">{{health}}</div>
+    <div class="monthAllBlock" v-if="all">
+      <div class="monthiconfont icon-zicelvemoban" style="color: #03A9F4">综合运势：{{all}}</div>
+    </div>
+    <div v-else></div>
+    <div class="monthWeekLine"></div>
+
+    <div class="monthHealthBlock" v-if="health">
+      <div class="monthiconfont icon-jiankang" style="color: #FF8A80">健康：{{health}}</div>
     </div>
     <div v-else></div>
     <div class="WeekLine"></div>
 
-    <div class="LoveBlock" v-if="love">
-      <div class="weekiconfont icon-aixin" style="color: #F44336">{{love}}</div>
+    <div class="monthLoveBlock" v-if="love">
+      <div class="monthiconfont icon-aixin" style="color: #F44336">爱情：{{love}}</div>
     </div>
     <div v-else></div>
     <div class="WeekLine"></div>
 
-    <div class="MoneyBlock" v-if="money">
-      <div class="weekiconfont icon-qian" style="color: #F57C00">{{money}}</div>
+    <div class="monthMoneyBlock" v-if="money">
+      <div class="monthiconfont icon-qian" style="color: #F57C00">财运：{{money}}</div>
     </div>
     <div v-else></div>
     <div class="WeekLine"></div>
 
-    <div class="WorkBlock" v-if="work">
-      <div class="weekiconfont icon-work" style="color: #3F51B5">{{work}}</div>
+    <div class="monthWorkBlock" v-if="work">
+      <div class="monthiconfont icon-work" style="color: #3F51B5">工作：{{work}}</div>
     </div>
     <div v-else></div>
 
@@ -54,41 +58,47 @@ export default {
   margin-top: 20rpx;
 }
 
-.HealthBlock {
+.monthAllBlock {
   margin-top: 35rpx;
   border-top: 5rpx solid #607d8b;
 }
 
-.HealthBlock div {
+.monthAllBlock div {
   margin-left: 70rpx;
   margin-right: 70rpx;
 }
 
-.JobBlock {
+.monthHealthBlock {
+  margin-top: 35rpx;
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+}
+
+.monthJobBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
 }
 
-.LoveBlock {
+.monthLoveBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
 }
 
-.MoneyBlock {
+.monthMoneyBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
 }
 
-.WorkBlock {
+.monthWorkBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
 }
 
-.WeekLine {
+.monthWeekLine {
   width: 200rpx;
   margin-top: 10rpx;
   margin-left: 70rpx;
@@ -96,9 +106,9 @@ export default {
   border-top: 5rpx solid #607d8b;
 }
 
-.weekiconfont {
+.monthiconfont {
   font-family:"iconfont" !important;
-  font-size:30rpx;
+  font-size:28rpx;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
