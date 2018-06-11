@@ -51,9 +51,15 @@
 
     <!-- 本月 -->
     <swiper-item>
-      <div class="monthSwiper">
-        
-      </div>
+      <monthDetail
+        :otherImage="otherImage"
+        :all="monthDetails.all"
+        :date="monthDetails.date"
+        :health="monthDetails.health"
+        :love="monthDetails.love"
+        :money="monthDetails.money"
+        :work="monthDetails.work"
+      />
     </swiper-item>
 
     <!-- 今年 -->
@@ -96,6 +102,7 @@ import { constellationRequest } from '../../utils/request.js';
 import todayDetail from '../../components/todayDetail';
 import tomorrowDetail from '../../components/tomorrowDetail';
 import weekDetail from '../../components/weekDetail';
+import monthDetail from '../../components/monthDetail';
 
 export default {
   async onLoad(option) {
@@ -120,7 +127,8 @@ export default {
   components: {
     todayDetail,
     tomorrowDetail,
-    weekDetail
+    weekDetail,
+    monthDetail
   },
   data() {
     return {
@@ -151,7 +159,17 @@ export default {
         money: "财运：虽有自己的理财想法，但总体受控于家人或家族的财务计划。受木星支撑，有机会得到家人的支援。但是土逆仍然显示你有债务加大的风险。置业房产出现时机，较大可能是家人出首期，你来月供。",
         work: "工作：水逆在本周结束，之前耽误、错过的出现弥补机会。职场进入休整状态，有调部门或岗位的可能。",
       },
-      monthDetails: {},
+      monthDetails: {
+        date:"2016年12月",
+        name:"白羊座",
+        all:"本月运势有两个重要的节点，一个是在上旬，水星进入事业宫，更加关注事业发展，目标性加强；而金星随之离开事业宫，原先的经验不能再为你赢得加分，反而是人脉上。。。",/*综合运势*/
+        happyMagic:"",
+        health:"上旬和中旬，运动能量高，适合开展锻炼计划，尤其是练习耐力的运动。下旬，水逆开启，出行要小心意外了.",
+        love:"现实的比较太累，你更喜欢朋友式的轻松相处，如果和爱人之间做不到，你会更眷恋友人的陪伴。因而本月“友情已达，恋人未满”的状况，会有更大的发生几率。",
+        money:"人际生财，多往人气旺的地方是有利打听到财富资讯，广开财路的。虽然人际开销也会增多，但可以当做是投资。",
+        month: 12,
+        work:"本月的目标性和计划性都很强，两个阶段的区别在于行动力。上旬和中旬，行动力分散，下旬，行动力足够，但受水逆影响，意外多"
+      },
       yearDetails: {},
     }
   },
