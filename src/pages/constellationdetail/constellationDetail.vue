@@ -37,64 +37,23 @@
     <!-- 本周 -->
     <swiper-item>
       <div class="weekSwiper">
-        <div class="detailTop">
-          <image class="TopImage" :src="otherImage" :mode="aspectFit" />
-          <div class="TopLine">
-            <div>本周运势</div>
-            <div>{{detail.datetime}}</div>
-          </div>   
-        </div>
-        
-        <div class="ContentBack">
-          <div class="CenterLine">
-            <div>综合指数: {{detail.all}}</div>
-            <div>健康指数: {{detail.helath}}</div>
-            <div>爱情指数: {{detail.love}}</div>
-            <div>财运指数: {{detail.money}}</div>
-            <div>工作指数: {{detail.work}}</div>
-            <div>速配星座: {{detail.QFriend}}</div>
-            <div>幸运数字: {{detail.number}}</div>
-            <div>幸运色: {{detail.color}}</div>
-          </div>
-          
-          <div class="FooterLine">
-            <div>今日概述: </div>            
-            <div>{{detail.summary}}</div>
-          </div>
-
-        </div>
+        <weekDetail
+          :otherImage="otherImage"
+          :name="weekDetails.name"
+          :date="weekDetails.date"
+          :health="weekDetails.health"
+          :job="weekDetails.job"
+          :love="weekDetails.love"
+          :money="weekDetails.money"
+          :work="weekDetails.work"
+        />
       </div>
     </swiper-item>
 
     <!-- 本月 -->
     <swiper-item>
       <div class="monthSwiper">
-        <div class="detailTop">
-          <image class="TopImage" :src="otherImage" :mode="aspectFit" />
-          <div class="TopLine">
-            <div>本月运势</div>
-            <div>{{detail.datetime}}</div>
-          </div>   
-        </div>
         
-        <div class="ContentBack">
-          <div class="CenterLine">
-            <div>综合指数: {{detail.all}}</div>
-            <div>健康指数: {{detail.helath}}</div>
-            <div>爱情指数: {{detail.love}}</div>
-            <div>财运指数: {{detail.money}}</div>
-            <div>工作指数: {{detail.work}}</div>
-            <div>速配星座: {{detail.QFriend}}</div>
-            <div>幸运数字: {{detail.number}}</div>
-            <div>幸运色: {{detail.color}}</div>
-          </div>
-          
-          <div class="FooterLine">
-            <div>今日概述: </div>            
-            <div>{{detail.summary}}</div>
-          </div>
-
-        </div>
       </div>
     </swiper-item>
 
@@ -137,6 +96,8 @@
 import { constellationRequest } from '../../utils/request.js';
 import todayDetail from '../../components/todayDetail';
 import tomorrowDetail from '../../components/tomorrowDetail';
+import weekDetail from '../../components/weekDetail';
+
 export default {
   async onLoad(option) {
     wx.setNavigationBarTitle({
@@ -159,7 +120,8 @@ export default {
   },
   components: {
     todayDetail,
-    tomorrowDetail
+    tomorrowDetail,
+    weekDetail
   },
   data() {
     return {
@@ -180,9 +142,18 @@ export default {
       isload: false,
       todayDetails: {},
       tomorrowDetails: {},
-      weekDetails: {},
+      weekDetails: {
+        name: "白羊座",
+        date: "2014年06月29日-2014年07月05日",
+        weekth: 27,
+        health: "健康：内心有焦躁，但身体拒绝过劳求舒适。容易有胃部不适。",
+        job: "求职：虽有新想法，但心态求稳当，容易低就。但较有可能从家人处获得的机会。",
+        love: "恋情：之前积累的想法和感受，本周选择说出来。沟通机会增多，亦有可能以争吵的方式出现。单身的，在聚会闲谈中可望获得更多缘分。",
+        money: "财运：虽有自己的理财想法，但总体受控于家人或家族的财务计划。受木星支撑，有机会得到家人的支援。但是土逆仍然显示你有债务加大的风险。置业房产出现时机，较大可能是家人出首期，你来月供。",
+        work: "工作：水逆在本周结束，之前耽误、错过的出现弥补机会。职场进入休整状态，有调部门或岗位的可能。",
+      },
       monthDetails: {},
-      yearDetails: {}
+      yearDetails: {},
     }
   },
   methods: {
