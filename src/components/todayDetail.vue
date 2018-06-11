@@ -6,7 +6,7 @@
         <image class="TopImage" :src="otherImage" :mode="aspectFit" />
       </div>
       <div class="TopLine">
-        <div style="color: #ff9e80">今日运势</div>
+        <div style="color: #ff9e80; text-align: center">今日运势</div>
         <div v-if="datetime" style="margin-top: 70rpx; color: #c96f53">{{datetime}}</div>
         <div v-else></div>
       </div>   

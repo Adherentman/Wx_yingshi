@@ -39,7 +39,6 @@
       <div class="weekSwiper">
         <weekDetail
           :otherImage="otherImage"
-          :name="weekDetails.name"
           :date="weekDetails.date"
           :health="weekDetails.health"
           :job="weekDetails.job"
