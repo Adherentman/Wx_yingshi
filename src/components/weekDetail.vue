@@ -16,25 +16,21 @@
       <div class="weekiconfont icon-jiankang" style="color: #FF8A80">{{health}}</div>
     </div>
     <div v-else></div>
-    <div class="WeekLine"></div>
 
     <div class="JobBlock" v-if="job">
       <div class="weekiconfont icon-work" style="color: #1976D2">{{job}}</div>
     </div>
     <div v-else></div>
-    <div class="WeekLine"></div>
 
     <div class="LoveBlock" v-if="love">
       <div class="weekiconfont icon-aixin" style="color: #F44336">{{love}}</div>
     </div>
     <div v-else></div>
-    <div class="WeekLine"></div>
 
     <div class="MoneyBlock" v-if="money">
       <div class="weekiconfont icon-qian" style="color: #F57C00">{{money}}</div>
     </div>
     <div v-else></div>
-    <div class="WeekLine"></div>
 
     <div class="WorkBlock" v-if="work">
       <div class="weekiconfont icon-work" style="color: #3F51B5">{{work}}</div>
@@ -60,36 +56,37 @@ export default {
 
 .HealthBlock {
   margin-top: 35rpx;
-  border-top: 5rpx solid #607d8b;
-}
-
-.HealthBlock div {
   margin-left: 70rpx;
   margin-right: 70rpx;
+  border-right: 5rpx solid #607d8b;
 }
 
 .JobBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
+  border-left: 5rpx solid #607d8b;
 }
 
 .LoveBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
+  border-right: 5rpx solid #607d8b;
 }
 
 .MoneyBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
+  border-left: 5rpx solid #607d8b;
 }
 
 .WorkBlock {
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-right: 70rpx;
+  border-right: 5rpx solid #607d8b;
 }
 
 .WeekLine {
