@@ -26,6 +26,17 @@
 
 ## 展示
 
-![gif](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject1.gif)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject3.png)
 
-![gif2](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject2.gif)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject2.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxporject4.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject5.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject6.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject7.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject8.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject9.png)
+![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject10.png)
+
+![gif很慢](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject1.gif)
+
+![gif很大很慢](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject2.gif)
