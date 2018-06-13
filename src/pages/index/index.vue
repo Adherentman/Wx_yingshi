@@ -36,7 +36,7 @@ import { MaoYanRequest } from '../../utils/request.js';
 
 export default {
   async onLoad(){
-    // this.getMovieList();
+    this.getMovieList();
   },
   data () {
     return {

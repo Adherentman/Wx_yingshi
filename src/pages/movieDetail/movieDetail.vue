@@ -76,7 +76,7 @@ export default {
     wx.setNavigationBarTitle({
       title: "影片详情"
     });
-    // this.MoiveDetails(option.id);
+    this.MoiveDetails(option.id);
   },
   components: {
     movielist
