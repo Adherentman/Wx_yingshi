@@ -1,21 +1,31 @@
-# wx_project
+# 映拾——微信小程序
 
-> A Mpvue project
+一个基于 `mpVue` 的小程序————映拾
 
-## Build Setup
+只是为了能让自己方便的查看平时经常看的一些信息然后集成于一个小程序，借助于方便的api。并且写惯了`react`尝试下`vue`这样不同的框架。
 
-``` bash
-# install dependencies
-npm install
+> UI纯自己瞎扯，丑请重重的吐槽
 
-# serve with hot reload at localhost:8080
-npm run dev
+还在开发ing.....
 
-# build for production with minification
-npm run build
+目前提供：
+- 美图欣赏
+  - 品味美
+- 近期电影查询
+  - 预告片
+  - 评论
+  - 等
+- 星座运势
+  - 今日
+  - 明日
+  - 这周
+  - 这月
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+提供源码大家可去学习。
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 展示
+
+![gif](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject1.gif)
+
+![gif2](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject2.gif)
