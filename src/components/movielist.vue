@@ -84,7 +84,7 @@ export default {
   background-color: #212121;
   width: 100%;
   height: 400rpx;
-  font-family: cursive;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .deatilImg {
