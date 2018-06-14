@@ -43,7 +43,3 @@
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject8.png)
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject9.png)
-
-![gif有点慢](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/1.gif)
-
-![gif有点慢](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/2.gif)
