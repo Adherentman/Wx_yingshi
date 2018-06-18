@@ -10,7 +10,7 @@
 
 目前提供：
 - 美图欣赏
-  - 品味美
+  - 品味美
 - 近期电影查询
   - 预告片
   - 评论
@@ -27,19 +27,15 @@
 ## 展示
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject2.png)
-
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject1.png)
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxporject3.png)
-
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject4.png)
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject5.png)
-
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject6.png)
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject7.png)
-
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject8.png)
 
 ![](https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/wechat/wxproject9.png)
